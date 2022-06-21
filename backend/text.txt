@@ -1,0 +1,17 @@
+So - mainModule is deprecated- main returns undefined for me using ES6 (am I doing something wrong?)
+
+what is current best practice for a global root directory?
+
+See also: https://nodejs.org/dist/latest-v14.x/docs/api/esm.html#esm_import_meta_url
+for ES6 filepath best practices.
+
+
+// app.use(bodyParser.urlencoded({ extended: false })); //for data sent through a form
+app.use(bodyParser.json()); //take form data and convert to json on the frontend first I guess
+
+util/globals.js:
+export const rootDir = path.resolve(path.resolve())
+app.js:
+// import { rootDir } from './util/globals.js';
+
+First commit. Currently working on file upload from multiple fields with multer. README has many notes. Will add to github.
