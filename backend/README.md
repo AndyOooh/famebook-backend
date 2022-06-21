@@ -1,4 +1,7 @@
-Create a nodemon.json file for env variables with:
+To run the app:
+
+- npm i
+- Create a nodemon.json file for env variables with:
 {
   "env": {
     "DB_USER": "mongodb user",
@@ -8,8 +11,9 @@ Create a nodemon.json file for env variables with:
     "JWT_SECRET": "somerandomlongstring"
   }
 }
-
-In package.json, change the start script to nodemon from node.
+- In package.json, change the start script to nodemon from node.
+- npm start.
+- Can use Postman for testing.
 
 
 Using:
