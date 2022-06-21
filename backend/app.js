@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import multer from 'multer';
+import dotenv from 'dotenv'
 
 import countdownRoutes from './routes/countdown.js';
 import authRoutes from './routes/auth.js';
@@ -12,7 +13,10 @@ import userRoutes from './routes/user.js';
 import * as conf from './util/app-config.js';
 import { rootDir } from './util/globals.js';
 
+
 const app = express();
+
+dotenv.config({path: rootDir + '/.env'})
 
 app.use(bodyParser.json()); //take form data and convert to json on the frontend first I guess
 // app.use(bodyParser.urlencoded({ extended: false })); //take form data and convert to json on the frontend first I guess
