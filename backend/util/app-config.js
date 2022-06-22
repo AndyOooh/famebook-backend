@@ -1,3 +1,5 @@
+console.log('inside app-config')
+console.log('process.env.DB_USER inside app-config', process.env.DB_USER)
 import multer from 'multer';
 
 export const MONGO_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.rsgc2.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;

@@ -1,6 +1,9 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
+console.log('1 DB:USER', process.env.DB_USER)
+console.log('1 Mongo URL', conf.MONGO_URI)
+
 import path from 'path';
 
 import express from 'express';
