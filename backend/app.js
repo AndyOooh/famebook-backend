@@ -18,6 +18,7 @@ import { rootDir } from './util/globals.js';
 
 
 console.log('DB:USER', process.env.DB_USER)
+console.log('MOno URL', conf.MONGO_URI)
 const app = express();
 
 // dotenv.config()
