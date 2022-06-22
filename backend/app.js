@@ -1,8 +1,8 @@
-import dotenv from 'dotenv'
-dotenv.config()
+import 'dotenv/config.js';
+// dotenv.config()
 
-console.log('1 DB:USER', process.env.DB_USER)
-console.log('1 Mongo URL', conf.MONGO_URI)
+console.log('1 DB:USER', process.env.DB_USER);
+console.log('1 Mongo URL', conf.MONGO_URI);
 
 import path from 'path';
 
@@ -19,17 +19,21 @@ import userRoutes from './routes/user.js';
 import * as conf from './util/app-config.js';
 import { rootDir } from './util/globals.js';
 
-
-console.log('DB:USER', process.env.DB_USER)
-console.log('MOno URL', conf.MONGO_URI)
+console.log('DB:USER', process.env.DB_USER);
+console.log('MOno URL', conf.MONGO_URI);
 const app = express();
 
 // dotenv.config()
 
 app.use(bodyParser.json()); //take form data and convert to json on the frontend first I guess
 // app.use(bodyParser.urlencoded({ extended: false })); //take form data and convert to json on the frontend first I guess
-// app.use(multer({ storage: conf.fileStorage, fileFilter: conf.fileFilter }).single('image')); 
-app.use(multer({ storage: conf.fileStorage, fileFilter: conf.fileFilter }).fields([{ name: 'profile-image', maxCount: 1 }, { name: 'cover-image', maxCount: 1 }]));
+// app.use(multer({ storage: conf.fileStorage, fileFilter: conf.fileFilter }).single('image'));
+app.use(
+  multer({ storage: conf.fileStorage, fileFilter: conf.fileFilter }).fields([
+    { name: 'profile-image', maxCount: 1 },
+    { name: 'cover-image', maxCount: 1 },
+  ])
+);
 // single = we expect to received only 1 file. pass name of fronend input field filepicker as a string. multer stores incoming files on req.file. by passing an object with dest: 'path' we can store the file in that path. this also turns the Buffer into binary data. console.log(re .file) before/after adding this config to see the diff.
 // Instead of dest, we can use multer.diskStorage (a storage engine) to set filename and path/destination. adding a file-extension will make it usable.
 app.use('/assets/images', express.static(path.join(rootDir, '/assets/images')));
