@@ -16,7 +16,7 @@ import { rootDir } from './util/globals.js';
 
 const app = express();
 
-dotenv.config({path: rootDir + '/.env'})
+dotenv.config()
 
 app.use(bodyParser.json()); //take form data and convert to json on the frontend first I guess
 // app.use(bodyParser.urlencoded({ extended: false })); //take form data and convert to json on the frontend first I guess
