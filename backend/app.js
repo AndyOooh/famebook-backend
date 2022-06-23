@@ -1,17 +1,11 @@
-import 'dotenv/config.js';
-// dotenv.config()
-
-console.log('1 DB:USER', process.env.DB_USER);
-console.log('1 Mongo URL', conf.MONGO_URI);
-
 import path from 'path';
 
+import 'dotenv/config.js';
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import multer from 'multer';
-// import dotenv from 'dotenv'
 
 import countdownRoutes from './routes/countdown.js';
 import authRoutes from './routes/auth.js';
@@ -19,11 +13,7 @@ import userRoutes from './routes/user.js';
 import * as conf from './util/app-config.js';
 import { rootDir } from './util/globals.js';
 
-console.log('DB:USER', process.env.DB_USER);
-console.log('MOno URL', conf.MONGO_URI);
 const app = express();
-
-// dotenv.config()
 
 app.use(bodyParser.json()); //take form data and convert to json on the frontend first I guess
 // app.use(bodyParser.urlencoded({ extended: false })); //take form data and convert to json on the frontend first I guess
