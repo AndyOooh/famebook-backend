@@ -26,12 +26,3 @@ To run the app:
 - npm start.
 - Can use Postman for testing.
 
-
-Using:
-    - ES6 module. In package.json we set "type": "module". Therefore we use import syntax instead of require(). This also has iplications for the use of __dirname, which is not globally available (as all other global variables?). Instead we can do:
-        export const rootDir = path.resolve(path.resolve()) in a utils/globals.js file for ex. 
-    - multer for parsing files. bodyparser does not have that ability. have to add enctype='multipart/form-data' in submithandler on frontend when sending multi-type data (files and text together eg)(might not have to do this. Max does it in the view [before REST API] and I have a note saying new FormData(), which we are sending, will set headers automatically)
-        
-
-  Notes:
-    CORS issues when using multiple ports on localhost (for different projects). Cors is set to allow port 3000 only, so need to change this if we are running on any other port unless I find a solution.
