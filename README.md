@@ -1,5 +1,6 @@
 # social-media-app
-A MERN stack BE and FE in one repo
+#A MERN stack BE and FE in one repo
+Backend of social media MERN stack project
 
 ![project-image1](https://user-images.githubusercontent.com/60953822/172692414-d6214bba-74bb-40d9-a5e8-81ab8719fa4a.jpg)
 
