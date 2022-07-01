@@ -9,12 +9,14 @@ export const signup = async (req, res, next) => {
   const errors = validationResult(req);
   console.log('errors before check', errors);
   if (!errors.isEmpty()) {
+    console.log('inside if errors array not empty')
     const error = new Error('Signup failed - andy.');
     error.statusCode = 422;
     error.data = errors.array(); // Look this func up. Add result to README
     return next(error);
     // throw error; //<-- caused a lot of trouble. See README for notes. Still can't figure out why Max' should work -it doesnøt when I download and run it.
   }
+  console.log('outsie if errors array not empty')
 
   const { username, email, password } = req.body;
 
