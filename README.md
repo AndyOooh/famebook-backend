@@ -10,7 +10,7 @@ Backend of social media MERN stack project
 
 
 
-To run the app:
+To run the app in development:
 
 - npm i
 - Create a nodemon.json file for env variables with:
@@ -23,7 +23,7 @@ To run the app:
     "JWT_SECRET": "somerandomlongstring"
   }
 }
-- In package.json, change the start script to nodemon from node.
+- In package.json, change the start scriptf rom node to nodemon.
 - npm start.
 - Can use Postman for testing.
 
